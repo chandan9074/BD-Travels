@@ -1,10 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet } from "react-native";
+import GetStarted from "./screens/GetStarted";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
-import GetStarted from "./screens/GetStarted";
 
 type RootStackParamList = {
   Login: undefined;
@@ -18,7 +17,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <RootStack.Navigator
-        initialRouteName="GetStarted"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}
