@@ -5,6 +5,7 @@ import { Dimensions, Image, SafeAreaView, Text, TextInput, TouchableOpacity, Vie
 // import loginBg from "../../assets/images/loginBg.jpg";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Controller, useForm } from "react-hook-form";
+import google from "../../assets/images/google.png";
 import loginBg2 from "../../assets/images/loginBg2.jpg";
 
 type RootStackParamList = {
@@ -273,7 +274,8 @@ const Login = ({ navigation }: Props) => {
         </View>
         
         <TouchableOpacity
-          onPress={handleSubmit(onSubmit)}
+          // onPress={handleSubmit(onSubmit)}
+          onPress={()=> navigation.navigate("Home")}
           style={{
             backgroundColor: "#99424e",
             // paddingHorizontal: 50,
@@ -292,6 +294,13 @@ const Login = ({ navigation }: Props) => {
           <TouchableOpacity><Text style={{ textDecorationLine: "underline", color: "#ab6d76", fontSize: 12 }}> Register</Text></TouchableOpacity>
         </View>
         <Text style={{ color: "#ab6d76", fontSize: 12, marginTop: 10 }}>or</Text>
+        <View style={{ marginTop: 10, flexDirection:"row", alignItems:"center" }}>
+          <TouchableOpacity style={{paddingVertical: 8, paddingHorizontal: 40, borderWidth:1, borderColor: "#FFC4C4", borderRadius: 10,}}><Image
+          source={google}
+          resizeMode="contain"
+          style={{ width: 20, height: 20 }}
+        /></TouchableOpacity>
+        </View>
         <TouchableOpacity style={{ marginTop: 10 }}>
           <Text style={{ color: "#ab6d76", fontSize: 16 }}>Skip</Text>
         </TouchableOpacity>
