@@ -1,1 +1,1 @@
-export const countries = ["Bangladesh", "China", "india", "Indonesia", "Thailand", "USA", "New York", "Nepal", "Bhutan"];
+export const categories = ["Clothing and Apparel", "Electronics and Gadgets", "Beauty and Personal Care", "Sports and Outdoors", "Food and Beverage", "Books and Media", "Toys and Games", "Baby and Kids", "Health and Wellness"];

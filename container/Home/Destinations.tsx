@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { countries } from "../../data/home"
+import { categories } from '../../data/home'
 
 const Destinations = () => {
-    const [current, setCurrent] = useState<string>(countries[0])
+    const [current, setCurrent] = useState<string>(categories[0])
 
-    const renderCountries = ({ item }: { item: string }) => {
+    const renderCategories = ({ item }: { item: string }) => {
         return (
-            <View style={styles.countriesContainer}>
+            <View style={styles.categoriesContainer}>
                 <TouchableOpacity onPress={()=> setCurrent(item)} style={styles.countryBtn}>
-                    <Text style={{ ...styles.countriesLabel, color: `${item === current ? "green" : "black"}` }}>{item}</Text>
+                    <Text style={{ ...styles.categoriesLabel, color: `${item === current ? "green" : "black"}` }}>{item}</Text>
                     {item === current ? <View style={styles.bullet} />: null}
                 </TouchableOpacity>
             </View>
@@ -18,7 +18,7 @@ const Destinations = () => {
     
   return (
       <View style={styles.container}>
-          <FlatList horizontal showsHorizontalScrollIndicator={false} data={countries} renderItem={renderCountries} keyExtractor={(index) => index} />
+          <FlatList horizontal showsHorizontalScrollIndicator={false} data={categories} renderItem={renderCategories} keyExtractor={(index) => index} />
     </View>
   )
 }
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 24,
     marginTop: 28,
   },
-  countriesLabel: {
+  categoriesLabel: {
     fontSize: 14,
     fontWeight: "700",
   },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#e8e6e6",
     borderRadius: 8
     },
-    countriesContainer: {
+    categoriesContainer: {
       marginEnd: 16
     },
     bullet: {
