@@ -8,9 +8,9 @@ const Destinations = () => {
     const renderCategories = ({ item }: { item: string }) => {
         return (
             <View style={styles.categoriesContainer}>
-                <TouchableOpacity onPress={()=> setCurrent(item)} style={styles.countryBtn}>
-                    <Text style={{ ...styles.categoriesLabel, color: `${item === current ? "green" : "black"}` }}>{item}</Text>
-                    {item === current ? <View style={styles.bullet} />: null}
+            <TouchableOpacity onPress={() => setCurrent(item)} style={{ ...styles.countryBtn, padding: 8, borderRadius: 6, backgroundColor: `${item === current ? "black" : "white"}`}}>
+                    <Text style={{ ...styles.categoriesLabel, color: `${item === current ? "white" : "black"}` }}>{item}</Text>
+                    {/* {item === current ? <View style={styles.bullet} />: null} */}
                 </TouchableOpacity>
             </View>
         )
@@ -28,12 +28,12 @@ export default Destinations
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-        paddingHorizontal: 24,
+        paddingHorizontal: 16,
     marginTop: 28,
   },
   categoriesLabel: {
     fontSize: 14,
-    fontWeight: "700",
+    fontWeight: "bold",
   },
   dashboardIcon: {
     padding: 10,
@@ -53,6 +53,8 @@ const styles = StyleSheet.create({
     countryBtn: {
         flexDirection: "column",
         alignItems: "center",
-        justifyContent:"center"
+      justifyContent: "center",
+      // paddingHorizontal: 20,
+      // borderRadius: 4
     }
 });
