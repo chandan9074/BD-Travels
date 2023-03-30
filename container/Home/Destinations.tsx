@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { useHomeContext } from '../../context/HomeProvider'
 import { categories } from '../../data/home'
 
 const Destinations = () => {
-    const [current, setCurrent] = useState<string>(categories[0])
+  
+  const { currentCategory, setCurrentCategory } = useHomeContext();
 
     const renderCategories = ({ item }: { item: string }) => {
         return (
             <View style={styles.categoriesContainer}>
-            <TouchableOpacity onPress={() => setCurrent(item)} style={{ ...styles.countryBtn, padding: 8, borderRadius: 6, backgroundColor: `${item === current ? "black" : "white"}`}}>
-                    <Text style={{ ...styles.categoriesLabel, color: `${item === current ? "white" : "black"}` }}>{item}</Text>
+            <TouchableOpacity onPress={() => setCurrentCategory(item)} style={{ ...styles.countryBtn, padding: 8, borderRadius: 6, backgroundColor: `${item === currentCategory ? "black" : "white"}`}}>
+                    <Text style={{ ...styles.categoriesLabel, color: `${item === currentCategory ? "white" : "black"}` }}>{item}</Text>
                     {/* {item === current ? <View style={styles.bullet} />: null} */}
                 </TouchableOpacity>
             </View>

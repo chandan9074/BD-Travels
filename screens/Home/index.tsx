@@ -1,9 +1,11 @@
 import { StackScreenProps } from "@react-navigation/stack";
-import React from "react";
+import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native";
 import Banner from "../../container/Home/Banner";
 import Destinations from "../../container/Home/Destinations";
 import Header from "../../container/Home/Herder";
+import Popular from "../../container/Home/Popular";
+import { useHomeContext } from "../../context/HomeProvider";
 
 type RootStackParamList = {
     Login: undefined;
@@ -13,12 +15,20 @@ type RootStackParamList = {
 
 type Props = StackScreenProps<RootStackParamList, 'Login', 'Home'>;
 
-const Home = ({navigation}:Props) => {
+const Home = ({ navigation }: Props) => {
+
+  const { getProducts } = useHomeContext();
+
+  useEffect(() => {
+    getProducts();
+  }, [])
+  
   return (
     <SafeAreaView style={{paddingTop: 20, backgroundColor:"#EEEEEE"}}>
       <Header />
       <Banner />
       <Destinations />
+      <Popular />
     </SafeAreaView>
   );
 };

@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
+import ProviderInjection from "./helper/ProviderInjection";
 import GetStarted from "./screens/GetStarted";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
@@ -15,18 +16,20 @@ const RootStack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RootStack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <RootStack.Screen name="Login" component={Login} />
-        <RootStack.Screen name="Home" component={Home} />
-        <RootStack.Screen name="GetStarted" component={GetStarted} />
-      </RootStack.Navigator>
-    </NavigationContainer>
+    <ProviderInjection>
+      <NavigationContainer>
+        <RootStack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <RootStack.Screen name="Login" component={Login} />
+          <RootStack.Screen name="Home" component={Home} />
+          <RootStack.Screen name="GetStarted" component={GetStarted} />
+          </RootStack.Navigator>
+      </NavigationContainer>
+    </ProviderInjection>
   );
 }
 
