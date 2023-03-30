@@ -10,5 +10,5 @@ export type productItemsDT = {
     brand: string;
     title: string;
     price: number;
-    img: string
+    img: string;
 }
