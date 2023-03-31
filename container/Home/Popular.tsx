@@ -18,7 +18,7 @@ const Popular = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Popular</Text>
-      <View>
+      <View style={styles.popularCardContainer}>
         <FlatList horizontal showsHorizontalScrollIndicator={false} data={products.find(item => item.category === currentCategory)?.items} renderItem={renderProducts} keyExtractor={(item) => item.id}  />
       </View>
     </View>
@@ -36,5 +36,9 @@ const styles = StyleSheet.create({
   container: {
         marginTop: 20,
         paddingHorizontal: 16
-    },
+  },
+  popularCardContainer: {
+    marginTop: 6,
+    paddingVertical: 10
+  }
 });

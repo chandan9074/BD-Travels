@@ -1,3 +1,5 @@
+import { ImageSourcePropType } from 'react-native';
+
 export type productDT = {
     id: string;
     category: string;
@@ -10,5 +12,5 @@ export type productItemsDT = {
     brand: string;
     title: string;
     price: number;
-    img: string;
+    img: ImageSourcePropType;
 }

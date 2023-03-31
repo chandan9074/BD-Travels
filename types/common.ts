@@ -2,6 +2,7 @@ export type ThemeDT = {
     textColor: stringDT;
     fontSize: numberDT;
     fontWight: fontWightDT;
+    backgroundColor: stringDT;
 }
 
 export type stringDT = {

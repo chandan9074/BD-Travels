@@ -1,7 +1,8 @@
 import { ThemeDT } from "../types/common";
 const Theme: ThemeDT = {
     textColor: {
-        primary: "#2C3333"
+        primary: "#2C3333",
+        gray: "#B2B2B2",
     },
     fontSize: {
         xxs: 12,
@@ -20,6 +21,11 @@ const Theme: ThemeDT = {
         semiBold: "600",
         bold: "700",
         extraBold: "900"
+    },
+    backgroundColor: {
+        primary: "#EEEEEE",
+        secondary: "#EFF5F5",
+        darkGreen: "#539165"
     }
 
 }
