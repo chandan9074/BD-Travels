@@ -34,7 +34,7 @@ const Banner = () => {
           />
           <View style={styles.bulletContainer}>
               {images.map((_, index) => (
-              <View style={{
+              <View key={index} style={{
                   height: 4, 
                     width: 20,
                     backgroundColor: `${selectedIndex === index ? "black": "#B2B2B2"}`,

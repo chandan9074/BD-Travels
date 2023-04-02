@@ -1,9 +1,11 @@
 import { ImageSourcePropType } from 'react-native';
 
 export type productDT = {
-    id: string;
-    category: string;
-    items: productItemsDT[];
+    popular: {
+        id: string;
+        category: string;
+        items: productItemsDT[];
+    }[]
 }
 
 export type productItemsDT = {

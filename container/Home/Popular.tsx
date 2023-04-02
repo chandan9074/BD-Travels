@@ -8,6 +8,8 @@ import { productItemsDT } from '../../types/home'
 const Popular = () => {
 
   const { products, currentCategory } = useHomeContext();
+
+  // console.log(products.popular && products.popular.find(item => item.category === currentCategory))
   
   const renderProducts = ({item}:{item: productItemsDT}) => {
     return (
@@ -19,7 +21,7 @@ const Popular = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Popular</Text>
       <View style={styles.popularCardContainer}>
-        <FlatList horizontal showsHorizontalScrollIndicator={false} data={products.find(item => item.category === currentCategory)?.items} renderItem={renderProducts} keyExtractor={(item) => item.id}  />
+        <FlatList horizontal showsHorizontalScrollIndicator={false} data={products.popular && products.popular.find(item => item.category === currentCategory)?.items} renderItem={renderProducts} keyExtractor={(item) => item.id}  />
       </View>
     </View>
   )

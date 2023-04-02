@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { products } from '../data/home';
 
 export class HomeService extends Component {
-    static getProduct() {
+  static getProduct() {
         return products;
   }
 }

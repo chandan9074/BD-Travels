@@ -5,7 +5,7 @@ import { productDT } from '../types/home';
 interface ContextProps {  
     loading: boolean;
     getProducts: () => void;
-    products: productDT[];
+    products: productDT;
     currentCategory: string;
     setCurrentCategory: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -18,7 +18,7 @@ export const useHomeContext = () => {
 
 const HomeProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
-    const [products, setProducts] = useState<productDT[]>([] as productDT[]);
+    const [products, setProducts] = useState<productDT>({} as productDT);
     const [currentCategory, setCurrentCategory] = useState<string>("Clothing and Apparel")
 
     const getProducts = async () => {
