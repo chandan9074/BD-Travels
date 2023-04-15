@@ -1,9 +1,12 @@
 import { Component } from 'react';
-import { products } from '../data/home';
+import { brands, products } from '../data/home';
 
 export class HomeService extends Component {
   static getProduct() {
         return products;
+  }
+  static getBrands() {
+    return brands;
   }
 }
 

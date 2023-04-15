@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import HomeService from '../services/HomeService';
-import { productDT } from '../types/home';
+import { brandDT, productDT } from '../types/home';
 
 interface ContextProps {  
     loading: boolean;
@@ -8,6 +8,8 @@ interface ContextProps {
     products: productDT;
     currentCategory: string;
     setCurrentCategory: React.Dispatch<React.SetStateAction<string>>;
+    brands: brandDT[];
+    getBrands: () => void;
 }
 
 export const HomeContext = createContext({} as ContextProps);
@@ -19,6 +21,7 @@ export const useHomeContext = () => {
 const HomeProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState<productDT>({} as productDT);
+    const [brands, setBrands] = useState<brandDT[]>([] as brandDT[])
     const [currentCategory, setCurrentCategory] = useState<string>("Clothing and Apparel")
 
     const getProducts = async () => {
@@ -31,8 +34,19 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
             setLoading(false)
         }
     }
+
+    const getBrands = async () => {
+        try {
+            setLoading(true)
+            const res = HomeService.getBrands();
+            setBrands(res);
+            setLoading(false)
+        } catch (error) {
+            setLoading(false)
+        }
+    }
   return (
-      <HomeContext.Provider value={{loading, getProducts, products, currentCategory, setCurrentCategory}}>
+      <HomeContext.Provider value={{loading, getProducts, products, currentCategory, setCurrentCategory, brands, getBrands}}>
           {children}
     </HomeContext.Provider>
   )

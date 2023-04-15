@@ -16,3 +16,8 @@ export type productItemsDT = {
     price: number;
     img: ImageSourcePropType;
 }
+
+export type brandDT = {
+    name: string;
+    img: ImageSourcePropType
+}

@@ -5,7 +5,7 @@ import { useHomeContext } from '../../context/HomeProvider'
 import Theme from '../../helper/Theme'
 import { productItemsDT } from '../../types/home'
 
-const Popular = () => {
+const DealsOfTheDay = () => {
 
   const { products, currentCategory } = useHomeContext();
 
@@ -20,7 +20,7 @@ const Popular = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.title}>Popular</Text>
+        <Text style={styles.title}>Deals of the Day</Text>
         <TouchableOpacity>
           <Text style={styles.btnText}>View all</Text>
         </TouchableOpacity>
@@ -32,7 +32,7 @@ const Popular = () => {
   )
 }
 
-export default Popular;
+export default DealsOfTheDay;
 
 const styles = StyleSheet.create({
   title: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWight.bold,
   },
   container: {
-        marginTop: 20,
+        marginTop: 16,
         paddingHorizontal: 16
   },
   popularCardContainer: {

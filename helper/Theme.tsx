@@ -25,7 +25,8 @@ const Theme: ThemeDT = {
     backgroundColor: {
         primary: "#EEEEEE",
         secondary: "#EFF5F5",
-        darkGreen: "#539165"
+        darkGreen: "#539165",
+        lightBlack: "#20262E"
     }
 
 }

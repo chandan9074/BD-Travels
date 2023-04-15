@@ -1,6 +1,9 @@
-import { productDT } from "../types/home";
+import { brandDT, productDT } from "../types/home";
 
+import adidas from "../assets/images/adidas.png";
+import mcdonalds from "../assets/images/mcdonalds.png";
 import shoe from "../assets/images/shoe.png";
+
 
 export const categories = ["Clothing and Apparel", "Electronics and Gadgets", "Beauty and Personal Care", "Sports and Outdoors", "Food and Beverage", "Books and Media", "Toys and Games", "Baby and Kids", "Health and Wellness"];
 
@@ -423,3 +426,30 @@ export const products: productDT = {
         
     ]
 }
+
+export const brands: brandDT[] = [
+    {
+        name: "Adidas",
+        img: adidas
+    },
+    {
+        name: "MCdonalds",
+        img: mcdonalds
+    },
+    {
+        name: "Adidas",
+        img: adidas
+    },
+    {
+        name: "MCdonalds",
+        img: mcdonalds
+    },
+    {
+        name: "Adidas",
+        img: adidas
+    },
+    {
+        name: "MCdonalds",
+        img: mcdonalds
+    }
+]

@@ -18,16 +18,31 @@ const Type1 = ({data}:Props) => {
           style={styles.bannerImg}
         />
       </View>
-      <View style={styles.detailsContainer}>
+      <View style={styles.cardTopPart}>
+          <Text style={styles.price}><MaterialIcons name="attach-money" size={12} color={Theme.textColor.primary} />{data.price}</Text>
+        <TouchableOpacity>
+          <MaterialIcons name="favorite-outline" size={16} color="black" />
+          </TouchableOpacity>
+      </View>
+      {/* <View style={styles.detailsContainer}>
         <View style={styles.headerContainer}>
           <Text style={styles.title}>{data.title}</Text>
-          <MaterialIcons name="favorite-outline" size={16} color="black" />
         </View>
         <Text style={styles.price}><MaterialIcons name="attach-money" size={12} color={Theme.textColor.gray} />{data.price}</Text>
         <TouchableOpacity style={styles.cartBtn}>
           Add to Cart
         </TouchableOpacity>
-      </View>
+      </View> */}
+      <View style={styles.detailsContainer}>
+        <Text style={styles.title}>{data.title}</Text>
+        <View style= {styles.viewCartContainer}>
+          <View style={styles.viewContainer}>
+            <MaterialIcons name="remove-red-eye" size={16} color={Theme.textColor.gray} />
+            <Text style={styles.viewTitle}>29</Text>
+          </View>
+          <MaterialIcons name="shopping-cart" size={16} color={Theme.textColor.gray} />
+        </View>
+       </View>
     </View>
   )
 }
@@ -37,7 +52,7 @@ export default Type1
 const styles = StyleSheet.create({
   container: {
     padding:4,
-    backgroundColor: "white",
+    backgroundColor: Theme.backgroundColor.secondary,
     marginRight: 8,
     marginVertical: 4,
     marginLeft: 4,
@@ -47,16 +62,22 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 20,
-    flexDirection: "row",
+    width: 155,
+    borderWidth: 4,
+    borderColor: "white",
+    position: "relative",
+    
   },
   imageContainer: {
     padding: 4,
-    backgroundColor: Theme.backgroundColor.secondary,
-    borderRadius: 6
+    // backgroundColor: Theme.backgroundColor.secondary,
+    borderRadius: 6,
+    width: "100%",
+    alignItems: "center"
   },
   bannerImg: {
-    width: 70,
-    height: 70,
+    width: 110,
+    height: 90,
   },
   detailsContainer: {
     padding: 8
@@ -66,13 +87,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: Theme.fontSize.small,
-    fontWeight: Theme.fontWight.semiBold,
+    fontWeight: Theme.fontWight.bold,
     color: Theme.textColor.primary,
     marginRight:16
   },
   price: {
     fontSize: Theme.fontSize.xxs,
-    color: Theme.textColor.gray,
+    color: Theme.textColor.primary,
     fontWeight: Theme.fontWight.bold,
     marginTop: 4
   }, 
@@ -86,5 +107,30 @@ const styles = StyleSheet.create({
     marginTop: 8,
     borderRadius: 4,
     alignSelf: 'flex-start',
+  },
+  cardTopPart: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    position: "absolute",
+    top: 0,
+    left:0,
+    padding: 6,
+
+  },
+  viewContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  viewTitle: {
+    fontSize: Theme.fontSize.xxs,
+    fontWeight: Theme.fontWight.semiBold,
+    color: Theme.textColor.primary
+  },
+  viewCartContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 8
   }
+
 })

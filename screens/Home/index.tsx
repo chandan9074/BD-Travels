@@ -1,12 +1,16 @@
 import { StackScreenProps } from "@react-navigation/stack";
 import React, { useEffect } from "react";
-import { SafeAreaView } from "react-native";
+import Layouts from "../../Layouts";
 import Banner from "../../container/Home/Banner";
+import BestSelling from "../../container/Home/BestSelling";
+import DealsOfTheDay from "../../container/Home/DealsOfTheDay";
 import Destinations from "../../container/Home/Destinations";
 import Header from "../../container/Home/Herder";
+import NewArrivals from "../../container/Home/NewArrivals";
+import OfferBanner from "../../container/Home/OfferBanner";
 import Popular from "../../container/Home/Popular";
+import PopularBrands from "../../container/Home/PopularBrands";
 import { useHomeContext } from "../../context/HomeProvider";
-import Theme from "../../helper/Theme";
 
 type RootStackParamList = {
     Login: undefined;
@@ -18,19 +22,28 @@ type Props = StackScreenProps<RootStackParamList, 'Login', 'Home'>;
 
 const Home = ({ navigation }: Props) => {
 
-  const { getProducts } = useHomeContext();
+  const { getProducts, getBrands } = useHomeContext();
 
   useEffect(() => {
     getProducts();
+    getBrands();
   }, [])
   
   return (
-    <SafeAreaView style={{paddingTop: 20, backgroundColor:Theme.backgroundColor.primary}}>
+    // <SafeAreaView style={{paddingTop: 20, backgroundColor:Theme.backgroundColor.primary}}>
+    <Layouts.Primary>
+
       <Header />
       <Banner />
       <Destinations />
       <Popular />
-    </SafeAreaView>
+      <BestSelling />
+      <OfferBanner />
+      <NewArrivals />
+      <DealsOfTheDay />
+      <PopularBrands />
+      </Layouts.Primary>
+    // </SafeAreaView>
   );
 };
 
