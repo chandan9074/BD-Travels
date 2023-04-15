@@ -3,6 +3,7 @@ const Theme: ThemeDT = {
     textColor: {
         primary: "#2C3333",
         gray: "#B2B2B2",
+        darkSilver: "#A9A9A9"
     },
     fontSize: {
         xxs: 12,

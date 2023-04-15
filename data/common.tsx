@@ -62,3 +62,9 @@ export const footerQuickLinksData: footerQuickLinksDT[] = [
         path: "/"
     },
 ]
+
+export const companyData = {
+    address: "#Hose-39/69, #Sector-7, Airport, Dhaka",
+    email: "kenaKata@gmail.com",
+    phone: "+8801833039074"
+}
