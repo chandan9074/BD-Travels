@@ -2,6 +2,10 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Modals from '../../components/Modals';
+import Theme from '../../helper/Theme';
+
 
 
 const Herder = () => {
@@ -12,13 +16,19 @@ const Herder = () => {
   return (
     <View style={{paddingHorizontal: 16}}>
       <View style={styles.container}>
-            <TouchableOpacity style={styles.dashboardIcon}>
-                <FontAwesome5 name="list" size={20} color="#6e6b6b" />
+          <TouchableOpacity style={styles.dashboardIcon}>
+            <FontAwesome5 name="list" size={20} color="#6e6b6b" />
           </TouchableOpacity>
           <Text style={styles.text}>Discover</Text>
-          <TouchableOpacity style={styles.dashboardIcon}>
-                <FontAwesome5 name="search" size={20} color="#6e6b6b" />
-          </TouchableOpacity>
+        <TouchableOpacity style={styles.dashboardIcon}>
+          <View style={styles.cartBadgeContainer} >
+            <Text style={styles.badgeText}>10</Text>
+          </View>
+          <MaterialIcons name="shopping-cart" size={20} color="#6e6b6b" />
+        </TouchableOpacity>
+        <View>
+          <Modals.CartModal.Type1 />
+        </View>
       </View>
       <View style={styles.searchFilterContainer}>
         <View style={styles.searchBox}>
@@ -73,7 +83,8 @@ const styles = StyleSheet.create({
     dashboardIcon: {
         padding: 10,
         backgroundColor: "white",
-        borderRadius: 8
+      borderRadius: 8,
+        position: "relative"
   },
   searchBox: {
     flex: 1,
@@ -96,6 +107,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginTop: 12
+  },
+  cartBadgeContainer: {
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+    borderRadius: 100,
+    backgroundColor: Theme.backgroundColor.lightBlack,
+    position: "absolute",
+    top: -12,
+    right: -8
+  },
+  badgeText: {
+    fontSize: 10,
+    color: "white",
+    fontWeight: Theme.fontWight.medium
   }
     
 });
