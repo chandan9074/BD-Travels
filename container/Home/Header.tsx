@@ -1,17 +1,24 @@
 import { FontAwesome5 } from '@expo/vector-icons';
+import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Modals from '../../components/Modals';
 import Theme from '../../helper/Theme';
 
 
+type RootStackParamList = {
+    MyCart: undefined;
+  };
+  
 
-const Herder = () => {
+type Props = StackScreenProps<RootStackParamList, 'MyCart'>;
+
+const Header = ({ navigation }: any) => {
   const { control, handleSubmit, formState: { errors } } = useForm({defaultValues: {
       search: '',
-    }});
+  }
+  });
   const onSubmit = (data: any) => console.log(data);
   return (
     <View style={{paddingHorizontal: 16}}>
@@ -20,15 +27,15 @@ const Herder = () => {
             <FontAwesome5 name="list" size={20} color="#6e6b6b" />
           </TouchableOpacity>
           <Text style={styles.text}>Discover</Text>
-        <TouchableOpacity style={styles.dashboardIcon}>
+        <TouchableOpacity onPress={() => navigation.navigate("MyCart")} style={styles.dashboardIcon}>
           <View style={styles.cartBadgeContainer} >
             <Text style={styles.badgeText}>10</Text>
           </View>
           <MaterialIcons name="shopping-cart" size={20} color="#6e6b6b" />
         </TouchableOpacity>
-        <View>
+        {/* <View style={{display: `${modalOpen ? "flex" : "none"}`, position: "absolute", right: 5, top: 65}}>
           <Modals.CartModal.Type1 />
-        </View>
+        </View> */}
       </View>
       <View style={styles.searchFilterContainer}>
         <View style={styles.searchBox}>
@@ -66,7 +73,7 @@ const Herder = () => {
   )
 }
 
-export default Herder
+export default Header
 
 const styles = StyleSheet.create({
   container: {
@@ -74,7 +81,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection:"row",
         justifyContent: 'space-between',
-        paddingVertical: 16,
+    paddingVertical: 16,
+        // position: "relative",
   },
   text: {
     fontSize: 18,

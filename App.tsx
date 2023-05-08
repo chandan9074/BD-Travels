@@ -5,11 +5,13 @@ import ProviderInjection from "./helper/ProviderInjection";
 import GetStarted from "./screens/GetStarted";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
+import MyCart from "./screens/MyCart";
 
 type RootStackParamList = {
   Login: undefined;
   Home: undefined;
   GetStarted: undefined;
+  MyCart: undefined;
 };
 
 const RootStack = createStackNavigator<RootStackParamList>();
@@ -27,6 +29,8 @@ export default function App() {
           <RootStack.Screen name="Login" component={Login} />
           <RootStack.Screen name="Home" component={Home} />
           <RootStack.Screen name="GetStarted" component={GetStarted} />
+          <RootStack.Screen name="MyCart" component={MyCart} />
+
           </RootStack.Navigator>
       </NavigationContainer>
     </ProviderInjection>

@@ -5,7 +5,7 @@ import Banner from "../../container/Home/Banner";
 import BestSelling from "../../container/Home/BestSelling";
 import DealsOfTheDay from "../../container/Home/DealsOfTheDay";
 import Destinations from "../../container/Home/Destinations";
-import Header from "../../container/Home/Herder";
+import Header from "../../container/Home/Header";
 import NewArrivals from "../../container/Home/NewArrivals";
 import OfferBanner from "../../container/Home/OfferBanner";
 import Popular from "../../container/Home/Popular";
@@ -13,12 +13,11 @@ import PopularBrands from "../../container/Home/PopularBrands";
 import { useHomeContext } from "../../context/HomeProvider";
 
 type RootStackParamList = {
-    Login: undefined;
-    Home: undefined;
+    MyCart: undefined;
   };
   
 
-type Props = StackScreenProps<RootStackParamList, 'Login', 'Home'>;
+type Props = StackScreenProps<RootStackParamList, 'MyCart'>;
 
 const Home = ({ navigation }: Props) => {
 
@@ -33,7 +32,7 @@ const Home = ({ navigation }: Props) => {
     // <SafeAreaView style={{paddingTop: 20, backgroundColor:Theme.backgroundColor.primary}}>
     <Layouts.Primary>
 
-      <Header />
+      <Header navigation={navigation} />
       <Banner />
       <Destinations />
       <Popular />
