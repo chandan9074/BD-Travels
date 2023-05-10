@@ -31,7 +31,6 @@ const Home = ({ navigation }: Props) => {
   return (
     // <SafeAreaView style={{paddingTop: 20, backgroundColor:Theme.backgroundColor.primary}}>
     <Layouts.Primary>
-
       <Header navigation={navigation} />
       <Banner />
       <Destinations />

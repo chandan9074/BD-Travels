@@ -16,7 +16,7 @@ const Banner = () => {
     const updateIndex = () => {
         setSelectedIndex(prevIndex => (prevIndex + 1) % images.length);
     };
-    
+
     useEffect(() => {
         const timer = setInterval(() => {
             updateIndex();
@@ -25,27 +25,27 @@ const Banner = () => {
         return () => clearInterval(timer);
     }, []);
 
-    
-  return (
-      <View style={styles.container} >
-          <Image
+
+    return (
+        <View style={styles.container} >
+            <Image
                 source={images[selectedIndex].img}
                 style={styles.bannerImg}
-          />
-          <View style={styles.bulletContainer}>
-              {images.map((_, index) => (
-              <View key={index} style={{
-                  height: 4, 
-                    width: 20,
-                    backgroundColor: `${selectedIndex === index ? "black": "#B2B2B2"}`,
-                      borderRadius: 10,
-                    marginRight: 4
-              }} />
-          ))}
-          </View>
-    </View>
+            />
+            <View style={styles.bulletContainer}>
+                {images.map((_, index) => (
+                    <View key={index} style={{
+                        height: 4,
+                        width: 20,
+                        backgroundColor: `${selectedIndex === index ? "black" : "#B2B2B2"}`,
+                        borderRadius: 10,
+                        marginRight: 4
+                    }} />
+                ))}
+            </View>
+        </View>
 
-  )
+    )
 }
 
 export default Banner;
@@ -58,14 +58,16 @@ const styles = StyleSheet.create({
     },
     container: {
         marginTop: 28,
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
+        position: "relative",
+        zIndex: 1
     },
     sliderBullet: {
-        height: 10, 
+        height: 10,
         width: 10,
         backgroundColor: "black",
         borderRadius: 50,
-        
+
     },
     bulletContainer: {
         flex: 1,

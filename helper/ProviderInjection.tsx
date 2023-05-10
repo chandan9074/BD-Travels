@@ -3,6 +3,7 @@ import Context from "../context";
 
 const providers = [
   Context.HomeProvider,
+  Context.CommonProvider,
 ];
 
 const ProviderInjection = ({ children }: { children: any }) => {

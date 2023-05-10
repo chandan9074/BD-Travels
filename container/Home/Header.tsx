@@ -2,32 +2,63 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, ViewStyle } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Theme from '../../helper/Theme';
+import SideDrawer from "../../components/SideDrawer"
+import { useCommonContext } from '../../context/CommonProvider';
 
 
 type RootStackParamList = {
-    MyCart: undefined;
-  };
-  
+  MyCart: undefined;
+};
+
+interface MyStyle extends ViewStyle {
+  transitionDuration?: string;
+}
+
 
 type Props = StackScreenProps<RootStackParamList, 'MyCart'>;
 
 const Header = ({ navigation }: any) => {
-  const { control, handleSubmit, formState: { errors } } = useForm({defaultValues: {
+  const { control, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: {
       search: '',
-  }
+    }
   });
+  const [sideDrawer, setSideDrawer] = React.useState<boolean>(false);
+  const { setIsScrollEnabled, isScrollEnabled } = useCommonContext();
   const onSubmit = (data: any) => console.log(data);
+
+  const sideDrawerStyle = StyleSheet.create({
+    sideDrawerContainer: {
+      // transitionProperty: 'opacity',
+      transitionDuration: '0.5s',
+      opacity: sideDrawer ? 1 : 0,
+      position: 'absolute',
+      right: sideDrawer ? 0 : '-100%',
+      top: 0,
+      width: '90%',
+      display: 'flex',
+      flex: 1,
+      backgroundColor: Theme.backgroundColor.lightBlack,
+    } as MyStyle,
+  })
+
+  const handleSideDrawer = () => {
+    setSideDrawer(!sideDrawer);
+    setIsScrollEnabled(!isScrollEnabled);
+  }
+
   return (
-    <View style={{paddingHorizontal: 16}}>
+    <View style={{ paddingHorizontal: 16, paddingTop: 20, position: "relative", zIndex: 50, }}>
       <View style={styles.container}>
-          <TouchableOpacity style={styles.dashboardIcon}>
-            <FontAwesome5 name="list" size={20} color="#6e6b6b" />
-          </TouchableOpacity>
-          <Text style={styles.text}>Discover</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("MyCart")} style={styles.dashboardIcon}>
+        <TouchableOpacity style={styles.dashboardIcon}>
+          <FontAwesome5 name="list" size={20} color="#6e6b6b" />
+        </TouchableOpacity>
+        <Text style={styles.text}>Discover</Text>
+        {/* <TouchableOpacity onPress={() => navigation.navigate("MyCart")} style={styles.dashboardIcon}> */}
+        <TouchableOpacity onPress={handleSideDrawer} style={styles.dashboardIcon}>
           <View style={styles.cartBadgeContainer} >
             <Text style={styles.badgeText}>10</Text>
           </View>
@@ -44,7 +75,7 @@ const Header = ({ navigation }: any) => {
             control={control}
             rules={{
               required: true,
-              }}
+            }}
             render={({ field: { onChange, onBlur, value } }) => (
               <TextInput
                 onBlur={onBlur}
@@ -53,15 +84,15 @@ const Header = ({ navigation }: any) => {
                 placeholder="Search"
                 placeholderTextColor="#B2B2B2"
                 style={{
-                  color: "black", 
+                  color: "black",
                   marginLeft: 16,
                   fontWeight: "500",
                   fontSize: 14,
                   //@ts-ignore
                   outline: "none"
                 }}
-                  />
-              )}
+              />
+            )}
             name="search"
           />
         </View>
@@ -69,7 +100,10 @@ const Header = ({ navigation }: any) => {
           <FontAwesome5 name="filter" size={14} color="white" />
         </TouchableOpacity>
       </View>
-    </View>
+      <View style={sideDrawerStyle.sideDrawerContainer}>
+        <SideDrawer.Cart.Type1 handleSideDrawer={handleSideDrawer} />
+      </View>
+    </View >
   )
 }
 
@@ -79,20 +113,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    flexDirection:"row",
-        justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: 'space-between',
     paddingVertical: 16,
-        // position: "relative",
+    // position: "relative",
   },
   text: {
     fontSize: 18,
     fontWeight: "bold",
-    },
-    dashboardIcon: {
-        padding: 10,
-        backgroundColor: "white",
-      borderRadius: 8,
-        position: "relative"
+  },
+  dashboardIcon: {
+    padding: 10,
+    backgroundColor: "white",
+    borderRadius: 8,
+    position: "relative"
   },
   searchBox: {
     flex: 1,
@@ -111,7 +145,7 @@ const styles = StyleSheet.create({
     marginLeft: 12
   },
   searchFilterContainer: {
-    flex:1,
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 12
@@ -129,6 +163,5 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: "white",
     fontWeight: Theme.fontWight.medium
-  }
-    
+  },
 });
