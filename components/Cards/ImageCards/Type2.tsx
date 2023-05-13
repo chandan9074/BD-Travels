@@ -4,18 +4,18 @@ import Theme from '../../../helper/Theme'
 import { brandDT } from '../../../types/home'
 
 type Props = {
-    data: brandDT
+  data: brandDT
 }
 
-const Type2 = ({data}: Props) => {
+const Type2 = ({ data }: Props) => {
   return (
-      <TouchableOpacity style={styles.container}>
-          <View>
-            <Image
-            source={data.img}
-            style={styles.bannerImg}
-            />
-        </View>
+    <TouchableOpacity style={styles.container}>
+      <View>
+        <Image
+          source={data.img}
+          style={styles.bannerImg}
+        />
+      </View>
     </TouchableOpacity>
   )
 }
@@ -25,7 +25,7 @@ export default Type2
 
 const styles = StyleSheet.create({
   container: {
-    padding:14,
+    padding: 14,
     backgroundColor: Theme.backgroundColor.secondary,
     marginRight: 12,
     marginVertical: 4,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "white",
     position: "relative",
-    
+
   },
   bannerImg: {
     width: 40,

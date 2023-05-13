@@ -27,7 +27,8 @@ const Theme: ThemeDT = {
         primary: "#EEEEEE",
         secondary: "#EFF5F5",
         darkGreen: "#539165",
-        lightBlack: "#20262E"
+        lightBlack: "#20262E",
+        darkGray: "#444941"
     }
 
 }

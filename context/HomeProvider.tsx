@@ -1,8 +1,8 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import HomeService from '../services/HomeService';
-import { brandDT, productDT } from '../types/home';
+import { brandDT, cartItemsDT, productDT } from '../types/home';
 
-interface ContextProps {  
+interface ContextProps {
     loading: boolean;
     getProducts: () => void;
     products: productDT;
@@ -10,6 +10,8 @@ interface ContextProps {
     setCurrentCategory: React.Dispatch<React.SetStateAction<string>>;
     brands: brandDT[];
     getBrands: () => void;
+    getCartItems: (loginToken: string) => void;
+    cartItems: cartItemsDT[];
 }
 
 export const HomeContext = createContext({} as ContextProps);
@@ -23,6 +25,7 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
     const [products, setProducts] = useState<productDT>({} as productDT);
     const [brands, setBrands] = useState<brandDT[]>([] as brandDT[])
     const [currentCategory, setCurrentCategory] = useState<string>("Clothing and Apparel")
+    const [cartItems, setCartItems] = useState<cartItemsDT[]>([] as cartItemsDT[])
 
     const getProducts = async () => {
         try {
@@ -45,11 +48,22 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
             setLoading(false)
         }
     }
-  return (
-      <HomeContext.Provider value={{loading, getProducts, products, currentCategory, setCurrentCategory, brands, getBrands}}>
-          {children}
-    </HomeContext.Provider>
-  )
+
+    const getCartItems = async (loginToken: string) => {
+        try {
+            setLoading(true)
+            const res = HomeService.getCartItems(loginToken);
+            setCartItems(res);
+            setLoading(false)
+        } catch (error) {
+            setLoading(false)
+        }
+    }
+    return (
+        <HomeContext.Provider value={{ loading, getProducts, products, currentCategory, setCurrentCategory, brands, getBrands, cartItems, getCartItems }}>
+            {children}
+        </HomeContext.Provider>
+    )
 }
 
 export default HomeProvider

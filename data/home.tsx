@@ -1,4 +1,4 @@
-import { brandDT, productDT } from "../types/home";
+import { brandDT, cartItemsDT, productDT } from "../types/home";
 
 import adidas from "../assets/images/adidas.png";
 import mcdonalds from "../assets/images/mcdonalds.png";
@@ -423,7 +423,7 @@ export const products: productDT = {
                 },
             ]
         },
-        
+
     ]
 }
 
@@ -452,4 +452,67 @@ export const brands: brandDT[] = [
         name: "MCdonalds",
         img: mcdonalds
     }
+]
+
+export const cartItems: cartItemsDT[] = [
+    {
+        userId: "1idf943",
+        id: "1",
+        type: "milk",
+        brand: "Nido",
+        title: "Nido 3+",
+        shortDescription: "strong and healthy",
+        longDescription: "Make your child strong and healthy with Nido 3+",
+        price: 1200,
+        img: shoe,
+        quantity: 3
+    },
+    {
+        userId: "1idd943",
+        id: "2",
+        type: "milk",
+        brand: "Nido",
+        title: "Nido 3+",
+        shortDescription: "strong and healthy",
+        longDescription: "Make your child strong and healthy with Nido 3+",
+        price: 1200,
+        img: shoe,
+        quantity: 2
+    },
+    {
+        userId: "1idf943",
+        id: "1",
+        type: "milk",
+        brand: "Nido",
+        title: "Nido 3+",
+        shortDescription: "strong and healthy",
+        longDescription: "Make your child strong and healthy with Nido 3+",
+        price: 1200,
+        img: shoe,
+        quantity: 3
+    },
+    {
+        userId: "1idd943",
+        id: "2",
+        type: "milk",
+        brand: "Nido",
+        title: "Nido 3+",
+        shortDescription: "strong and healthy",
+        longDescription: "Make your child strong and healthy with Nido 3+",
+        price: 1200,
+        img: shoe,
+        quantity: 2
+    },
+    {
+        userId: "1idf943",
+        id: "1",
+        type: "milk",
+        brand: "Nido",
+        title: "Nido 3+",
+        shortDescription: "strong and healthy",
+        longDescription: "Make your child strong and healthy with Nido 3+",
+        price: 1200,
+        img: shoe,
+        quantity: 3
+    },
 ]

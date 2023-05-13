@@ -21,3 +21,16 @@ export type brandDT = {
     name: string;
     img: ImageSourcePropType
 }
+
+export type cartItemsDT = {
+    userId: string;
+    id: string;
+    type: string;
+    brand: string;
+    title: string;
+    shortDescription: string;
+    longDescription: string;
+    price: number;
+    img: ImageSourcePropType;
+    quantity: number;
+}
