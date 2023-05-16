@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Theme from '../../../helper/Theme'
-import { useHomeContext } from '../../../context/HomeProvider';
+import { useProductContext } from '../../../context/ProductProvider';
 import { useCommonContext } from '../../../context/CommonProvider';
 import Cards from '../../Cards';
 import { cartItemsDT } from '../../../types/home';
@@ -14,7 +14,7 @@ type Props = {
 }
 
 const Type1 = ({ handleSideDrawer }: Props) => {
-    const { cartItems, getCartItems } = useHomeContext();
+    const { cartItems, getCartItems } = useProductContext();
     const { loginToken } = useCommonContext();
     useEffect(() => {
         getCartItems(loginToken);
@@ -48,9 +48,7 @@ const Type1 = ({ handleSideDrawer }: Props) => {
                     </View>
                 </View>
                 <Text style={styles.totalDes}>Sipping & discount calculated at checkout</Text>
-                <View>
-                    <Buttons.LabelButton.Primary label="Checkout" variant='white' />
-                </View>
+                <Buttons.LabelButton.Primary label="Checkout" variant='white' />
             </View>
         </View>
     )

@@ -1,22 +1,22 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Cards from '../../components/Cards'
-import { useHomeContext } from '../../context/HomeProvider'
+import { useProductContext } from '../../context/ProductProvider'
 import Theme from '../../helper/Theme'
 import { productItemsDT } from '../../types/home'
 
 const DealsOfTheDay = () => {
 
-  const { products, currentCategory } = useHomeContext();
+  const { products, currentCategory } = useProductContext();
 
   // console.log(products.popular && products.popular.find(item => item.category === currentCategory))
-  
-  const renderProducts = ({item}:{item: productItemsDT}) => {
+
+  const renderProducts = ({ item }: { item: productItemsDT }) => {
     return (
       <Cards.ImageCards.Type1 data={item} />
     )
   }
-  
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -26,7 +26,7 @@ const DealsOfTheDay = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.popularCardContainer}>
-        <FlatList horizontal showsHorizontalScrollIndicator={false} data={products.popular && products.popular.find(item => item.category === currentCategory)?.items} renderItem={renderProducts} keyExtractor={(item) => item.id}  />
+        <FlatList horizontal showsHorizontalScrollIndicator={false} data={products.popular && products.popular.find(item => item.category === currentCategory)?.items} renderItem={renderProducts} keyExtractor={(item) => item.id} />
       </View>
     </View>
   )
@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWight.bold,
   },
   container: {
-        marginTop: 16,
-        paddingHorizontal: 16
+    marginTop: 16,
+    paddingHorizontal: 16
   },
   popularCardContainer: {
     marginTop: 6,

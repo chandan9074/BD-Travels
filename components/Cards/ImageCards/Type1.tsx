@@ -6,10 +6,10 @@ import Theme from '../../../helper/Theme';
 import { productItemsDT } from '../../../types/home';
 
 type Props = {
-    data: productItemsDT
+  data: productItemsDT
 }
 
-const Type1 = ({data}:Props) => {
+const Type1 = ({ data }: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -19,10 +19,10 @@ const Type1 = ({data}:Props) => {
         />
       </View>
       <View style={styles.cardTopPart}>
-          <Text style={styles.price}><MaterialIcons name="attach-money" size={12} color={Theme.textColor.primary} />{data.price}</Text>
+        <Text style={styles.price}><MaterialIcons name="attach-money" size={12} color={Theme.textColor.primary} />{data.price}</Text>
         <TouchableOpacity>
           <MaterialIcons name="favorite-outline" size={16} color="black" />
-          </TouchableOpacity>
+        </TouchableOpacity>
       </View>
       {/* <View style={styles.detailsContainer}>
         <View style={styles.headerContainer}>
@@ -35,14 +35,16 @@ const Type1 = ({data}:Props) => {
       </View> */}
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{data.title}</Text>
-        <View style= {styles.viewCartContainer}>
+        <View style={styles.viewCartContainer}>
           <View style={styles.viewContainer}>
             <MaterialIcons name="remove-red-eye" size={16} color={Theme.textColor.gray} />
             <Text style={styles.viewTitle}>29</Text>
           </View>
-          <MaterialIcons name="shopping-cart" size={16} color={Theme.textColor.gray} />
+          <TouchableOpacity style={styles.cartBtnContainer}>
+            <MaterialIcons name="shopping-cart" size={11} color="white" />
+          </TouchableOpacity>
         </View>
-       </View>
+      </View>
     </View>
   )
 }
@@ -51,7 +53,7 @@ export default Type1
 
 const styles = StyleSheet.create({
   container: {
-    padding:4,
+    padding: 4,
     backgroundColor: Theme.backgroundColor.secondary,
     marginRight: 8,
     marginVertical: 4,
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: "white",
     position: "relative",
-    
+
   },
   imageContainer: {
     padding: 4,
@@ -89,14 +91,14 @@ const styles = StyleSheet.create({
     fontSize: Theme.fontSize.small,
     fontWeight: Theme.fontWight.bold,
     color: Theme.textColor.primary,
-    marginRight:16
+    marginRight: 16
   },
   price: {
     fontSize: Theme.fontSize.xxs,
     color: Theme.textColor.primary,
     fontWeight: Theme.fontWight.bold,
     marginTop: 4
-  }, 
+  },
   cartBtn: {
     paddingHorizontal: 16,
     paddingVertical: 6,
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     position: "absolute",
     top: 0,
-    left:0,
+    left: 0,
     padding: 6,
 
   },
@@ -131,6 +133,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 8
+  },
+  cartBtnContainer: {
+    padding: 6,
+    backgroundColor: Theme.backgroundColor.lightBlack,
+    borderRadius: 100,
   }
 
 })

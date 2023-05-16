@@ -7,20 +7,23 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Theme from '../../helper/Theme';
 import SideDrawer from "../../components/SideDrawer"
 import { useCommonContext } from '../../context/CommonProvider';
-
-
-type RootStackParamList = {
-  MyCart: undefined;
-};
+import Layouts from '../../Layouts';
 
 interface MyStyle extends ViewStyle {
   transitionDuration?: string;
 }
 
+type RootStackParamList = {
+  MyCart: undefined;
+  AllProducts: { type: string, category: string };
+};
 
-type Props = StackScreenProps<RootStackParamList, 'MyCart'>;
 
-const Header = ({ navigation }: any) => {
+type Props = StackScreenProps<RootStackParamList, 'MyCart', "AllProducts"> & {
+  title: string;
+};
+
+const Header = ({ navigation, route, title }: Props) => {
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       search: '',
@@ -43,6 +46,19 @@ const Header = ({ navigation }: any) => {
       flex: 1,
       backgroundColor: Theme.backgroundColor.lightBlack,
     } as MyStyle,
+    outlay: {
+      transitionProperty: 'opacity',
+      transitionDuration: '0.5s',
+      opacity: sideDrawer ? 0.5 : 0,
+      position: 'absolute',
+      right: sideDrawer ? 0 : '-100%',
+      top: 0,
+      width: '100%',
+      height: '100vh',
+      display: 'flex',
+      flex: 1,
+      backgroundColor: Theme.backgroundColor.lightBlack,
+    } as MyStyle,
   })
 
   const handleSideDrawer = () => {
@@ -56,7 +72,7 @@ const Header = ({ navigation }: any) => {
         <TouchableOpacity style={styles.dashboardIcon}>
           <FontAwesome5 name="list" size={20} color="#6e6b6b" />
         </TouchableOpacity>
-        <Text style={styles.text}>Discover</Text>
+        <Text style={styles.text}>{title}</Text>
         {/* <TouchableOpacity onPress={() => navigation.navigate("MyCart")} style={styles.dashboardIcon}> */}
         <TouchableOpacity onPress={handleSideDrawer} style={styles.dashboardIcon}>
           <View style={styles.cartBadgeContainer} >
@@ -100,9 +116,9 @@ const Header = ({ navigation }: any) => {
           <FontAwesome5 name="filter" size={14} color="white" />
         </TouchableOpacity>
       </View>
-      <View style={sideDrawerStyle.sideDrawerContainer}>
+      <Layouts.SideDrawer.Primary sideDrawer={sideDrawer} align='right'>
         <SideDrawer.Cart.Type1 handleSideDrawer={handleSideDrawer} />
-      </View>
+      </Layouts.SideDrawer.Primary>
     </View >
   )
 }

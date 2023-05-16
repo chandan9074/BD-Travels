@@ -1,5 +1,6 @@
-import Primary from "./Primary";
+import Screen from "./Screen";
+import SideDrawer from "./SideDrawer";
 
-const Layouts = { Primary }
+const Layouts = { SideDrawer, Screen };
 
-export default Layouts
+export default Layouts;

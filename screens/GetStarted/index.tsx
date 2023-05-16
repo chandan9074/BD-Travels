@@ -22,7 +22,7 @@ type Props = StackScreenProps<RootStackParamList, "Login", "Home">;
 
 const GetStarted = ({ navigation }: Props) => {
   return (
-    <SafeAreaView style={{paddingTop:50, position:"relative", height:"100%"}}>
+    <SafeAreaView style={{ paddingTop: 50, position: "relative", height: "100%" }}>
       <View style={{ flex: 1, height: "100%" }}>
         {/* <Image source={loginBg} /> */}
         <Image

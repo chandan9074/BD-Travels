@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { brands, cartItems, products } from '../data/home';
 
-export class HomeService extends Component {
+export class ProductService extends Component {
   static getProduct() {
     return products;
   }
@@ -11,6 +11,9 @@ export class HomeService extends Component {
   static getCartItems(loginToken: string) {
     return cartItems;
   }
+  static getProductsByCategory(type: string, category: string) {
+    return products[type].find((item) => item.category === category);
+  }
 }
 
-export default HomeService
+export default ProductService

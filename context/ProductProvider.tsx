@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
-import HomeService from '../services/HomeService';
-import { brandDT, cartItemsDT, productDT } from '../types/home';
+import ProductService from '../services/ProductService';
+import { brandDT, cartItemsDT, productCategoryDT, productDT } from '../types/home';
 
 interface ContextProps {
     loading: boolean;
@@ -12,17 +12,20 @@ interface ContextProps {
     getBrands: () => void;
     getCartItems: (loginToken: string) => void;
     cartItems: cartItemsDT[];
+    getProductsByCategory: (type: string, category: string) => void;
+    productByCategory: productCategoryDT;
 }
 
-export const HomeContext = createContext({} as ContextProps);
+export const ProductContext = createContext({} as ContextProps);
 
-export const useHomeContext = () => {
-    return useContext(HomeContext);
+export const useProductContext = () => {
+    return useContext(ProductContext);
 }
 
-const HomeProvider = ({ children }: { children: ReactNode }) => {
+const ProductProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState<productDT>({} as productDT);
+    const [productByCategory, setProductByCategory] = useState<productCategoryDT>({} as productCategoryDT)
     const [brands, setBrands] = useState<brandDT[]>([] as brandDT[])
     const [currentCategory, setCurrentCategory] = useState<string>("Clothing and Apparel")
     const [cartItems, setCartItems] = useState<cartItemsDT[]>([] as cartItemsDT[])
@@ -30,7 +33,7 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
     const getProducts = async () => {
         try {
             setLoading(true)
-            const res = HomeService.getProduct();
+            const res = ProductService.getProduct();
             setProducts(res);
             setLoading(false)
         } catch (error) {
@@ -41,7 +44,7 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
     const getBrands = async () => {
         try {
             setLoading(true)
-            const res = HomeService.getBrands();
+            const res = ProductService.getBrands();
             setBrands(res);
             setLoading(false)
         } catch (error) {
@@ -52,18 +55,29 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
     const getCartItems = async (loginToken: string) => {
         try {
             setLoading(true)
-            const res = HomeService.getCartItems(loginToken);
+            const res = ProductService.getCartItems(loginToken);
             setCartItems(res);
             setLoading(false)
         } catch (error) {
             setLoading(false)
         }
     }
+
+    const getProductsByCategory = async (type: string, category: string) => {
+        try {
+            setLoading(true)
+            const res = ProductService.getProductsByCategory(type, category);
+            if (res) setProductByCategory(res)
+            setLoading(false)
+        } catch (error) {
+            setLoading(false)
+        }
+    }
     return (
-        <HomeContext.Provider value={{ loading, getProducts, products, currentCategory, setCurrentCategory, brands, getBrands, cartItems, getCartItems }}>
+        <ProductContext.Provider value={{ loading, getProducts, products, currentCategory, setCurrentCategory, brands, getBrands, cartItems, getCartItems, getProductsByCategory, productByCategory }}>
             {children}
-        </HomeContext.Provider>
+        </ProductContext.Provider>
     )
 }
 
-export default HomeProvider
+export default ProductProvider

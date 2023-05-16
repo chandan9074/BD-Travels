@@ -1,11 +1,11 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { useHomeContext } from '../../context/HomeProvider'
+import { useProductContext } from '../../context/ProductProvider'
 import { categories } from '../../data/home'
 
 const Destinations = () => {
 
-  const { currentCategory, setCurrentCategory } = useHomeContext();
+  const { currentCategory, setCurrentCategory } = useProductContext();
 
   const renderCategories = ({ item }: { item: string }) => {
     return (

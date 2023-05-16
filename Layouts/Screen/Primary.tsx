@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, Dimensions } from 'react-native';
-import Footer from '../components/Footer';
-import Theme from '../helper/Theme';
-import { useCommonContext } from '../context/CommonProvider';
+import Footer from '../../components/Footer';
+import Theme from '../../helper/Theme';
+import { useCommonContext } from '../../context/CommonProvider';
 
 type Props = {
   children?: any;

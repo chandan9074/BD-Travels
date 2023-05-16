@@ -19,6 +19,8 @@ export const products: productDT = {
                     brand: "Yellow",
                     title: "Smart Shirt",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -27,6 +29,8 @@ export const products: productDT = {
                     brand: "Easy",
                     title: "Man Shirt",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -35,6 +39,8 @@ export const products: productDT = {
                     brand: "Yellow",
                     title: "Summer Shirt",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -43,6 +49,8 @@ export const products: productDT = {
                     brand: "Easy",
                     title: "Winter Shirt",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -51,6 +59,8 @@ export const products: productDT = {
                     brand: "Yellow",
                     title: "Woman Shirt",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -64,7 +74,9 @@ export const products: productDT = {
                     type: "phone",
                     brand: "Apple",
                     title: "Iphone 14 pro",
-                    price: 120000,
+                    price: 12000,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -73,6 +85,8 @@ export const products: productDT = {
                     brand: "HP",
                     title: "Hp core I-9",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -81,6 +95,8 @@ export const products: productDT = {
                     brand: "Beats",
                     title: "B-4584b",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -89,6 +105,8 @@ export const products: productDT = {
                     brand: "Xiaomi",
                     title: "Xiaomi 4bc",
                     price: 500,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -97,7 +115,9 @@ export const products: productDT = {
                     brand: "Apple",
                     title: "Macbook Air",
                     price: 500,
-                    img: shoe,
+
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+", img: shoe,
                 },
             ]
         },
@@ -111,6 +131,8 @@ export const products: productDT = {
                     brand: "Navia",
                     title: "Navia man",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -119,6 +141,8 @@ export const products: productDT = {
                     brand: "Navia",
                     title: "Navia man",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -127,6 +151,8 @@ export const products: productDT = {
                     brand: "Navia",
                     title: "Navia man",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -135,6 +161,8 @@ export const products: productDT = {
                     brand: "Navia",
                     title: "Navia man",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -143,6 +171,8 @@ export const products: productDT = {
                     brand: "Navia",
                     title: "Navia man",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -157,6 +187,8 @@ export const products: productDT = {
                     brand: "Nike",
                     title: "Nike gold-45c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -165,6 +197,8 @@ export const products: productDT = {
                     brand: "Nike",
                     title: "Nike gold-45c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -173,6 +207,8 @@ export const products: productDT = {
                     brand: "Nike",
                     title: "Nike gold-45c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -181,6 +217,8 @@ export const products: productDT = {
                     brand: "Nike",
                     title: "Nike gold-45c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -189,6 +227,8 @@ export const products: productDT = {
                     brand: "Nike",
                     title: "Nike gold-45c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -203,6 +243,8 @@ export const products: productDT = {
                     brand: "Pizza Hut",
                     title: "Gummy Big-12",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -211,6 +253,8 @@ export const products: productDT = {
                     brand: "Pizza Hut",
                     title: "Gummy Big-12",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -219,6 +263,8 @@ export const products: productDT = {
                     brand: "Pizza Hut",
                     title: "Gummy Big-12",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -227,6 +273,8 @@ export const products: productDT = {
                     brand: "Pizza Hut",
                     title: "Gummy Big-12",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -235,6 +283,8 @@ export const products: productDT = {
                     brand: "Pizza Hut",
                     title: "Gummy Big-12",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -249,6 +299,8 @@ export const products: productDT = {
                     brand: "ABC Publication",
                     title: "Gummy 12c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -257,6 +309,8 @@ export const products: productDT = {
                     brand: "ABC Publication",
                     title: "Gummy 12c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -265,6 +319,8 @@ export const products: productDT = {
                     brand: "ABC Publication",
                     title: "Gummy 12c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -273,6 +329,8 @@ export const products: productDT = {
                     brand: "ABC Publication",
                     title: "Gummy 12c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -281,6 +339,8 @@ export const products: productDT = {
                     brand: "ABC Publication",
                     title: "Gummy 12c",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -295,6 +355,8 @@ export const products: productDT = {
                     brand: "FIFA",
                     title: "FIFA-2023",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -303,6 +365,8 @@ export const products: productDT = {
                     brand: "FIFA",
                     title: "FIFA-2023",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -311,6 +375,8 @@ export const products: productDT = {
                     brand: "FIFA",
                     title: "FIFA-2023",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -319,6 +385,8 @@ export const products: productDT = {
                     brand: "FIFA",
                     title: "FIFA-2023",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -327,6 +395,8 @@ export const products: productDT = {
                     brand: "FIFA",
                     title: "FIFA-2023",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -341,6 +411,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -349,6 +421,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -357,6 +431,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -365,6 +441,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -373,6 +451,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
@@ -387,6 +467,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -395,6 +477,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -403,6 +487,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -411,6 +497,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
                 {
@@ -419,6 +507,8 @@ export const products: productDT = {
                     brand: "Nido",
                     title: "Nido 3+",
                     price: 1200,
+                    shortDescription: "strong and healthy",
+                    longDescription: "Make your child strong and healthy with Nido 3+",
                     img: shoe,
                 },
             ]
