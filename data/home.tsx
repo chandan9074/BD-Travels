@@ -1,4 +1,4 @@
-import { brandDT, cartItemsDT, productDT } from "../types/home";
+import { brandDT, cartItemsDT, productDT, singleProductDT } from "../types/home";
 
 import adidas from "../assets/images/adidas.png";
 import mcdonalds from "../assets/images/mcdonalds.png";
@@ -606,3 +606,21 @@ export const cartItems: cartItemsDT[] = [
         quantity: 3
     },
 ]
+
+export const singleProduct: singleProductDT = {
+    userId: "1idf943",
+    id: "1",
+    type: "milk",
+    brand: "Nido",
+    title: "Nido 3+",
+    shortDescription: "strong and healthy",
+    longDescription: "Make your child strong and healthy with Nido 3+",
+    specifications: "Make your child strong and healthy with Nido 3+",
+    category: "Health and Wellness",
+    rating: 4,
+    price: 1200,
+    offerPrice: 1000,
+    img: shoe,
+    secondaryImg: [shoe, shoe, shoe],
+    stock: 10,
+}

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { brands, cartItems, products } from '../data/home';
+import { brands, cartItems, products, singleProduct } from '../data/home';
 
 export class ProductService extends Component {
   static getProduct() {
@@ -13,6 +13,9 @@ export class ProductService extends Component {
   }
   static getProductsByCategory(type: string, category: string) {
     return products[type].find((item) => item.category === category);
+  }
+  static getProductById(id: string) {
+    return singleProduct;
   }
 }
 

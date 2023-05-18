@@ -38,3 +38,21 @@ export type cartItemsDT = {
     img: ImageSourcePropType;
     quantity: number;
 }
+
+export type singleProductDT = {
+    userId: string;
+    id: string;
+    type: string;
+    brand: string;
+    title: string;
+    shortDescription: string;
+    longDescription: string;
+    specifications: string;
+    category: string;
+    rating: number;
+    price: number;
+    offerPrice: number;
+    img: ImageSourcePropType;
+    secondaryImg: ImageSourcePropType[];
+    stock: number;
+}
