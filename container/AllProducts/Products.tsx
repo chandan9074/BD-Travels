@@ -4,28 +4,33 @@ import { productCategoryDT, productItemsDT } from '../../types/home'
 import Cards from '../../components/Cards'
 import Theme from '../../helper/Theme'
 import HorizontalBar from '../../components/HorizontalBar'
+import { NavProps } from '../../types/common'
 
 type Props = {
     productByCategory: productCategoryDT
 }
 
-const Products = ({ productByCategory }: Props) => {
+const Products = ({ navigation, route, productByCategory }: NavProps & Props) => {
 
     console.log(productByCategory, "productByCategory")
 
+    const handleSingleProductNavigation = (id: string) => {
+        navigation.navigate("SingleProduct", { proId: id })
+    }
+
     const renderProducts = ({ item, index }: { item: productItemsDT, index: number }) => (
         <View style={styles.item}>
-            <Cards.ImageCards.Type3 data={item} />
+            <Cards.ImageCards.Type3 data={item} handleSingleProductNavigation={handleSingleProductNavigation} />
         </View>
     )
     return (
         <View style={styles.container}>
             {/* {productByCategory && <Text style={styles.quantityTitle}>Found {productByCategory?.items?.length} Results</Text>} */}
             <Text style={styles.title}>Trending</Text>
-            <View style={styles.horizontalContainer}><HorizontalBar.Type1 width={40} firstBarColor='black' secondBarColor='gray' height={3} /></View>
+            {/* <View style={styles.horizontalContainer}><HorizontalBar.Type1 width={40} firstBarColor='black' secondBarColor='gray' height={3} /></View> */}
             <View style={styles.trendCartContainer}>{productByCategory.items && <Cards.ImageCards.Type4 data={productByCategory?.items[0]} />}</View>
             <Text style={styles.popularTitle}>Popular</Text>
-            <View style={styles.horizontalContainer}><HorizontalBar.Type1 width={40} firstBarColor='black' secondBarColor='gray' height={3} /></View>
+            {/* <View style={styles.horizontalContainer}><HorizontalBar.Type1 width={40} firstBarColor='black' secondBarColor='gray' height={3} /></View> */}
             <FlatList style={{ width: "100%" }} data={productByCategory.items} renderItem={renderProducts} keyExtractor={(item) => item.id} numColumns={2} contentContainerStyle={styles.productContainer} />
         </View>
     )
@@ -58,12 +63,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: Theme.textColor.primary,
         fontWeight: Theme.fontWight.bold,
+        marginBottom: 12,
     },
     popularTitle: {
         fontSize: 18,
         color: Theme.textColor.primary,
         fontWeight: Theme.fontWight.bold,
-        marginTop: 10,
+        marginTop: 14,
+        marginBottom: 12
     },
     horizontalContainer: {
         marginTop: 6,

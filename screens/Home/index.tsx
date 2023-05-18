@@ -1,26 +1,18 @@
-import { StackScreenProps } from "@react-navigation/stack";
 import React, { useEffect } from "react";
 import Layouts from "../../Layouts";
 import Banner from "../../container/Home/Banner";
 import BestSelling from "../../container/Home/BestSelling";
 import DealsOfTheDay from "../../container/Home/DealsOfTheDay";
 import Destinations from "../../container/Home/Destinations";
-import Header from "../../container/Home/Header";
 import NewArrivals from "../../container/Home/NewArrivals";
 import OfferBanner from "../../container/Home/OfferBanner";
 import Popular from "../../container/Home/Popular";
 import PopularBrands from "../../container/Home/PopularBrands";
 import { useProductContext } from "../../context/ProductProvider";
+import Headers from "../../components/Headers";
+import { NavProps } from "../../types/common";
 
-type RootStackParamList = {
-  MyCart: undefined;
-  AllProducts: { type: string };
-};
-
-
-type Props = StackScreenProps<RootStackParamList, 'MyCart', "AllProducts">;
-
-const Home = ({ navigation, route }: Props) => {
+const Home = ({ navigation, route }: NavProps) => {
 
   const { getProducts, getBrands } = useProductContext();
 
@@ -32,7 +24,7 @@ const Home = ({ navigation, route }: Props) => {
   return (
     // <SafeAreaView style={{paddingTop: 20, backgroundColor:Theme.backgroundColor.primary}}>
     <Layouts.Screen.Primary>
-      <Header navigation={navigation} route={route} title="Home" />
+      <Headers.Primary navigation={navigation} route={route} title="Home" />
       <Banner />
       <Destinations />
       <Popular navigation={navigation} route={route} />

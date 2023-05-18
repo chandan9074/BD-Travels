@@ -4,17 +4,10 @@ import Cards from '../../components/Cards'
 import { useProductContext } from '../../context/ProductProvider'
 import Theme from '../../helper/Theme'
 import { productItemsDT } from '../../types/home'
-import { StackScreenProps } from "@react-navigation/stack";
-
-type RootStackParamList = {
-  MyCart: undefined;
-  AllProducts: { type: string, category: string };
-};
+import { NavProps } from '../../types/common'
 
 
-type Props = StackScreenProps<RootStackParamList, 'MyCart', "AllProducts">;
-
-const Popular = ({ navigation, route }: Props) => {
+const Popular = ({ navigation, route }: NavProps) => {
 
   const { products, currentCategory } = useProductContext();
 

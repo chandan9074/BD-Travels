@@ -7,15 +7,16 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 type Props = {
     data: productItemsDT;
+    handleSingleProductNavigation: (id: string) => void;
 }
 
-const Type3 = ({ data }: Props) => {
+const Type3 = ({ data, handleSingleProductNavigation }: Props) => {
     return (
         <View style={styles.container}>
-            <View style={styles.imageContainer}>
+            <TouchableOpacity onPress={() => handleSingleProductNavigation(data.id)} style={styles.imageContainer}>
                 <Image source={data.img} style={styles.image} resizeMode='contain' />
-            </View>
-            <Text style={styles.title}>{data.title}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => handleSingleProductNavigation(data.id)}><Text style={styles.title}>{data.title}</Text></TouchableOpacity>
             <Text style={styles.des}>{data.shortDescription}</Text>
             <View style={styles.footerContainer}>
                 <View style={styles.priceContainer}>

@@ -7,6 +7,7 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import MyCart from "./screens/MyCart";
 import AllProducts from "./screens/AllProducts";
+import SingleProduct from "./screens/SingleProduct";
 
 type RootStackParamList = {
   Login: undefined;
@@ -14,6 +15,7 @@ type RootStackParamList = {
   GetStarted: undefined;
   MyCart: undefined;
   AllProducts: { type: string, category: string };
+  SingleProduct: { id: string };
 };
 
 const RootStack = createStackNavigator<RootStackParamList>();
@@ -23,7 +25,7 @@ export default function App() {
     <ProviderInjection>
       <NavigationContainer>
         <RootStack.Navigator
-          initialRouteName="AllProducts"
+          initialRouteName="SingleProduct"
           screenOptions={{
             headerShown: false,
           }}
@@ -33,6 +35,7 @@ export default function App() {
           <RootStack.Screen name="GetStarted" component={GetStarted} />
           <RootStack.Screen name="MyCart" component={MyCart} />
           <RootStack.Screen name="AllProducts" component={AllProducts} />
+          <RootStack.Screen name="SingleProduct" component={SingleProduct} />
         </RootStack.Navigator>
       </NavigationContainer>
     </ProviderInjection>

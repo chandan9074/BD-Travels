@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
-import Layouts from '../../Layouts'
-import Header from '../../container/Home/Header'
-import { StackScreenProps } from "@react-navigation/stack";
+import React, { useEffect } from 'react';
+import Layouts from '../../Layouts';
 import { useProductContext } from '../../context/ProductProvider';
 import Products from '../../container/AllProducts/Products';
-
-type RootStackParamList = {
-    MyCart: undefined;
-    AllProducts: { type: string, category: string };
-};
+import Headers from '../../components/Headers';
+import { NavProps } from '../../types/common';
 
 
-type Props = StackScreenProps<RootStackParamList, 'MyCart', "AllProducts">;
-
-
-const AllProducts = ({ navigation, route }: Props) => {
+const AllProducts = ({ navigation, route }: NavProps) => {
     //@ts-ignore
     // const { type } = route.params
     const { productByCategory, getProductsByCategory } = useProductContext()
@@ -26,8 +17,8 @@ const AllProducts = ({ navigation, route }: Props) => {
 
     return (
         <Layouts.Screen.Primary>
-            <Header navigation={navigation} route={route} title={"Popular"} />
-            <Products productByCategory={productByCategory} />
+            <Headers.Primary navigation={navigation} route={route} title={"Popular"} isBack={true} isSearchBar={true} />
+            <Products navigation={navigation} route={route} productByCategory={productByCategory} />
         </Layouts.Screen.Primary>
     )
 }
