@@ -52,7 +52,12 @@ export type singleProductDT = {
     rating: number;
     price: number;
     offerPrice: number;
+    images: imagesDT[];
+    stock: number;
+}
+
+export type imagesDT = {
+    id: string;
     img: ImageSourcePropType;
     secondaryImg: ImageSourcePropType[];
-    stock: number;
 }

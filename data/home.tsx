@@ -620,7 +620,22 @@ export const singleProduct: singleProductDT = {
     rating: 4,
     price: 1200,
     offerPrice: 1000,
-    img: shoe,
-    secondaryImg: [shoe, shoe, shoe],
+    images: [
+        {
+            id: "1",
+            img: shoe,
+            secondaryImg: [shoe, shoe, shoe]
+        },
+        {
+            id: "2",
+            img: shoe,
+            secondaryImg: [shoe, shoe, shoe, shoe]
+        },
+        {
+            id: "3",
+            img: shoe,
+            secondaryImg: [shoe, shoe]
+        }
+    ],
     stock: 10,
 }

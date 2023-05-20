@@ -15,10 +15,10 @@ const SingleProduct = ({ navigation, route }: NavProps) => {
         getProductById("1")
     }, [])
     return (
-        <Layouts.Screen.Primary>
+        <Layouts.Screen.Secondary>
             <Headers.Primary navigation={navigation} route={route} title={singleProduct.category} isBack={true} isSearchBar={false} />
             <ProductView data={singleProduct} />
-        </Layouts.Screen.Primary>
+        </Layouts.Screen.Secondary>
     )
 }
 
