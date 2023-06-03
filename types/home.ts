@@ -54,6 +54,8 @@ export type singleProductDT = {
     offerPrice: number;
     images: imagesDT[];
     stock: number;
+    color: string[];
+    size: string[];
 }
 
 export type imagesDT = {

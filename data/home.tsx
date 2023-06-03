@@ -614,8 +614,8 @@ export const singleProduct: singleProductDT = {
     brand: "Nido",
     title: "Nido 3+",
     shortDescription: "strong and healthy",
-    longDescription: "Make your child strong and healthy with Nido 3+",
-    specifications: "Make your child strong and healthy with Nido 3+",
+    longDescription: "Make your child strong and healthy with Nido 3+ Make your child strong and healthy with Nido 3+",
+    specifications: "Make your child strong and healthy with Nido 3+ Make your child strong and healthy with Nido 3+ Make your child strong and healthy with Nido 3+",
     category: "Health and Wellness",
     rating: 4,
     price: 1200,
@@ -638,4 +638,6 @@ export const singleProduct: singleProductDT = {
         }
     ],
     stock: 10,
+    color: ["black", "white", "silver"],
+    size: ["S", "M", "L", "XL"],
 }
