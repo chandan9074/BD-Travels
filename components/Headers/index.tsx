@@ -1,5 +1,5 @@
 import Primary from "./Primary";
-
-const Headers = { Primary };
+import Secondary from "./Secondary";
+const Headers = { Primary, Secondary };
 
 export default Headers;

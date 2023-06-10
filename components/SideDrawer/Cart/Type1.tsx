@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         marginBottom: 24,
     },
     cardContainer: {
-        height: 550,
+        height: 490,
     },
     subTotalContainer: {
         paddingHorizontal: 20,
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         width: "100%",
+        backgroundColor: Theme.backgroundColor.lightBlack,
     },
     subtitle: {
         fontSize: Theme.fontSize.small,
