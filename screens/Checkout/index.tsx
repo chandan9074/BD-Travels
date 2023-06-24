@@ -21,7 +21,7 @@ const Checkout = ({ navigation, route }: NavProps) => {
             <Headers.Secondary navigation={navigation} route={route} isBack={true} isSearchBar={false} >
                 <ProgressBar.Type1 steps={steps} activeStep={activeStep} handleActiveStep={handleActiveStep} />
             </Headers.Secondary>
-            <View style={style.container}>
+            <View>
                 {activeStep === steps[0] ? <Step1 /> : activeStep === steps[1] ? <Step2 /> : <Step3 />}
             </View>
         </Layouts.Screen.Secondary>
@@ -29,9 +29,3 @@ const Checkout = ({ navigation, route }: NavProps) => {
 }
 
 export default Checkout
-
-const style = StyleSheet.create({
-    container: {
-        paddingHorizontal: 16,
-    }
-})

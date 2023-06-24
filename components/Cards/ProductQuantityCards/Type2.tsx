@@ -79,6 +79,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         width: '100%',
+        borderBottomWidth: 1.5,
+        borderBottomColor: "#d2d3d4",
+        paddingVertical: 20,
     },
     checkboxContainer: {
         backgroundColor: 'transparent',
