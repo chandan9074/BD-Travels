@@ -10,7 +10,7 @@ import Step3 from '../../container/Checkout/Step3'
 
 const Checkout = ({ navigation, route }: NavProps) => {
     const steps = ["1", "2", "3"]
-    const [activeStep, setActiveStep] = useState<string>(steps[0]);
+    const [activeStep, setActiveStep] = useState<string>(steps[1]);
 
     const handleActiveStep = (value: string) => {
         setActiveStep(value);

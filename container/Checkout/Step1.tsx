@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     },
     total: {
         color: 'silver',
-        fontSize: Theme.fontSize.sm,
+        fontSize: Theme.fontSize.small,
         fontWeight: Theme.fontWight.bold,
     },
     details: {
