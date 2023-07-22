@@ -5,6 +5,7 @@ import { CheckBox } from 'react-native-elements';
 import Theme from '../../../helper/Theme';
 import { FontAwesome5 } from '@expo/vector-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useCheckoutContext } from '../../../context/CheckoutProvider';
 
 type Props = {
     data: cartItemsDT;
@@ -13,7 +14,13 @@ type Props = {
 const Type2 = ({ data }: Props) => {
     const [checked, setChecked] = React.useState(false);
     const [quantity, setQuantity] = React.useState(data.quantity);
+    const { selectedProducts, setSelectedProducts } = useCheckoutContext();
 
+    /**
+     * @description - handle quantity plus minus 
+     * @param {string} type - plus or minus
+     * @returns {void}
+     */
     const handleQuantity = (type: string) => {
         if (type === "plus") {
             setQuantity(quantity + 1);
@@ -23,6 +30,19 @@ const Type2 = ({ data }: Props) => {
             }
         }
     }
+
+    const handleSelect = () => {
+        if (checked) {
+            setChecked(false);
+            const newProducts = selectedProducts.filter((item) => item.id !== data.id);
+            setSelectedProducts(newProducts);
+        }
+        else {
+            setChecked(true);
+            setSelectedProducts([...selectedProducts, data]);
+        }
+    }
+
     return (
         <View style={styles.container}>
             <CheckBox
@@ -35,7 +55,7 @@ const Type2 = ({ data }: Props) => {
                 checkedColor="black"
                 uncheckedColor="gray"
                 size={20}
-                onPress={() => setChecked(!checked)}
+                onPress={handleSelect}
             />
             <View style={styles.productContainer}>
                 <View style={styles.productCardLeftContainer}>

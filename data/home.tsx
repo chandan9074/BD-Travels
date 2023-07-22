@@ -571,7 +571,7 @@ export const cartItems: cartItemsDT[] = [
     },
     {
         userId: "1idf943",
-        id: "1",
+        id: "3",
         type: "milk",
         brand: "Nido",
         title: "Nido 3+",
@@ -583,7 +583,7 @@ export const cartItems: cartItemsDT[] = [
     },
     {
         userId: "1idd943",
-        id: "2",
+        id: "4",
         type: "milk",
         brand: "Nido",
         title: "Nido 3+",
@@ -595,7 +595,7 @@ export const cartItems: cartItemsDT[] = [
     },
     {
         userId: "1idf943",
-        id: "1",
+        id: "5",
         type: "milk",
         brand: "Nido",
         title: "Nido 3+",

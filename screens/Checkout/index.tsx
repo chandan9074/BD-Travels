@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 import Layouts from '../../Layouts'
 import Headers from '../../components/Headers'
 import { NavProps } from '../../types/common'
@@ -22,7 +22,7 @@ const Checkout = ({ navigation, route }: NavProps) => {
                 <ProgressBar.Type1 steps={steps} activeStep={activeStep} handleActiveStep={handleActiveStep} />
             </Headers.Secondary>
             <View>
-                {activeStep === steps[0] ? <Step1 /> : activeStep === steps[1] ? <Step2 /> : <Step3 />}
+                {activeStep === steps[0] ? <Step1 steps={steps} handleActiveStep={handleActiveStep} /> : activeStep === steps[1] ? <Step2 /> : <Step3 />}
             </View>
         </Layouts.Screen.Secondary>
     )

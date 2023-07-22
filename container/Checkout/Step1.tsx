@@ -7,12 +7,25 @@ import { cartItemsDT } from '../../types/home';
 import Buttons from '../../components/Buttons';
 import Theme from '../../helper/Theme';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useCheckoutContext } from '../../context/CheckoutProvider';
 
-const Step1 = () => {
+type Props = {
+    steps: string[],
+    handleActiveStep: (value: string) => void,
+}
+
+const Step1 = ({ handleActiveStep, steps }: Props) => {
     const { cartItems, getCartItems } = useProductContext();
     const { loginToken } = useCommonContext();
+    const { selectedProducts } = useCheckoutContext();
 
     console.log("cartItems", cartItems)
+
+    const handleCheckout = () => {
+        if (selectedProducts.length > 0) {
+            handleActiveStep(steps[1]);
+        }
+    }
 
     useEffect(() => {
         // console.log("call getCartItems")
@@ -35,19 +48,19 @@ const Step1 = () => {
             </View>
             <View style={styles.footerContainer}>
                 <View style={styles.footerHeaderContainer}>
-                    <Text style={styles.title}>Selected items (3)</Text>
+                    <Text style={styles.title}>Selected items ({selectedProducts.length})</Text>
                     <View style={styles.headerRightContainer}>
                         <View style={styles.totalContainer}>
                             <Text style={styles.title}>Total: </Text>
                             <View style={styles.totalContainer}>
                                 <MaterialCommunityIcons name="currency-bdt" size={16} color="silver" />
-                                <Text style={styles.total}>1200</Text>
+                                <Text style={styles.total}>{selectedProducts.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)}</Text>
                             </View>
                         </View>
                         <Text style={styles.details}>(WITHOUT SHIPPING COST & VAT)</Text>
                     </View>
                 </View>
-                <Buttons.LabelButton.Primary label="Checkout" variant='white' />
+                <Buttons.LabelButton.Primary label="Checkout" variant='white' onPress={handleCheckout} />
             </View>
         </View>
     )

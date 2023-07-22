@@ -4,6 +4,7 @@ import Context from "../context";
 const providers = [
   Context.HomeProvider,
   Context.CommonProvider,
+  Context.CheckoutProvider,
 ];
 
 const ProviderInjection = ({ children }: { children: any }) => {
