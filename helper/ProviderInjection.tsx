@@ -5,6 +5,7 @@ const providers = [
   Context.HomeProvider,
   Context.CommonProvider,
   Context.CheckoutProvider,
+  Context.UserProvider,
 ];
 
 const ProviderInjection = ({ children }: { children: any }) => {
