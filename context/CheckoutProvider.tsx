@@ -1,27 +1,54 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
-import { cartItemsDT } from '../types/home';
+import React, { createContext, ReactNode, useContext, useState } from "react";
+import { cartItemsDT } from "../types/home";
+import { paymentTypesDT } from "../types/payment";
+import PaymentService from "../services/CheckoutService";
 
 interface ContextProps {
-    loading: boolean;
-    selectedProducts: cartItemsDT[];
-    setSelectedProducts: React.Dispatch<React.SetStateAction<cartItemsDT[]>>;
+  loading: boolean;
+  selectedProducts: cartItemsDT[];
+  setSelectedProducts: React.Dispatch<React.SetStateAction<cartItemsDT[]>>;
+  getPaymentType: () => void;
+  paymentType: paymentTypesDT[];
 }
 
 export const CheckoutContext = createContext({} as ContextProps);
 
 export const useCheckoutContext = () => {
-    return useContext(CheckoutContext);
-}
+  return useContext(CheckoutContext);
+};
 
 const CheckoutProvider = ({ children }: { children: ReactNode }) => {
-    const [loading, setLoading] = useState(false);
-    const [selectedProducts, setSelectedProducts] = useState<cartItemsDT[]>([] as cartItemsDT[]);
+  const [loading, setLoading] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState<cartItemsDT[]>(
+    [] as cartItemsDT[]
+  );
+  const [paymentType, setPaymentType] = useState([] as paymentTypesDT[]);
 
-    return (
-        <CheckoutContext.Provider value={{ loading, selectedProducts, setSelectedProducts }}>
-            {children}
-        </CheckoutContext.Provider>
-    )
-}
+  const getPaymentType = () => {
+    try {
+      setLoading(true);
+      const response = PaymentService.paymentType();
+      setPaymentType(response);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log("getPaymentType error", error);
+    }
+  };
 
-export default CheckoutProvider
+  return (
+    <CheckoutContext.Provider
+      value={{
+        loading,
+        selectedProducts,
+        setSelectedProducts,
+        getPaymentType,
+        paymentType,
+      }}
+    >
+      {children}
+    </CheckoutContext.Provider>
+  );
+};
+
+export default CheckoutProvider;

@@ -1,12 +1,10 @@
 export type userInfoDT = {
-    address: {
-        primary: addressDT,
-        secondary: addressDT,
-    }
-}
+  address: addressDT[];
+};
 
 export type addressDT = {
-    title: string,
-    phoneNumber: string,
-    address: string,
-}
+  type: string;
+  title: string;
+  phoneNumber: string;
+  address: string;
+};
