@@ -1,26 +1,28 @@
+import Icons from "../assets/icons";
+
 export const paymentType = [
   {
     id: 1,
     title: "Credit Card",
-    icon: "credit-card",
+    icon: Icons.creditCard,
     type: "creditCard",
   },
   {
     id: 2,
     title: "Paypal",
-    icon: "paypal",
+    icon: Icons.paypal,
     type: "paypal",
   },
   {
     id: 3,
     title: "Mobile Banking",
-    icon: "smartphone",
+    icon: Icons.mobileBanking,
     type: "mobileBanking",
   },
   {
     id: 4,
     title: "Cash on Delivery",
-    icon: "dollar-sign",
+    icon: Icons.cashOnDelivery,
     type: "cashOnDelivery",
   },
 ];

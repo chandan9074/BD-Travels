@@ -1,37 +1,41 @@
 import { StackScreenProps } from "@react-navigation/stack";
 
 export type RootStackParamList = {
-    Login: undefined;
-    Home: undefined;
-    GetStarted: undefined;
-    MyCart: undefined;
-    AllProducts: { type: string, category: string };
-    SingleProduct: { proId: string };
+  Login: undefined;
+  Home: undefined;
+  GetStarted: undefined;
+  MyCart: undefined;
+  AllProducts: { type: string; category: string };
+  SingleProduct: { proId: string };
 };
 
-export type NavProps = StackScreenProps<RootStackParamList, "Login" | "Home" | "GetStarted" | "MyCart" | "AllProducts" | "SingleProduct">;
+export type NavProps = StackScreenProps<
+  RootStackParamList,
+  "Login" | "Home" | "GetStarted" | "MyCart" | "AllProducts" | "SingleProduct"
+>;
 
 export type ThemeDT = {
-    textColor: textColorDT;
-    fontSize: fontSizeDT;
-    fontWight: fontWightDT;
-    backgroundColor: backgroundColorDT;
-}
+  textColor: textColorDT;
+  fontSize: fontSizeDT;
+  fontWight: fontWightDT;
+  backgroundColor: backgroundColorDT;
+};
 
 export type textColorDT = {
-    primary: string;
-    gray: string;
-    darkSilver: string;
-}
+  primary: string;
+  gray: string;
+  darkSilver: string;
+};
 
 export type backgroundColorDT = {
-    primary: string;
-    secondary: string;
-    darkGreen: string;
-    lightBlack: string;
-    darkGray: string;
-    darkGray2: string;
-}
+  primary: string;
+  secondary: string;
+  darkGreen: string;
+  lightBlack: string;
+  darkGray: string;
+  darkGray2: string;
+  lightGray: string;
+};
 
 /**
  * Represents a set of text colors used in the application.
@@ -47,26 +51,26 @@ export type backgroundColorDT = {
  * @property {string} 4xl - 32px
  */
 export type fontSizeDT = {
-    xxs: number;
-    xs: number;
-    small: number;
-    base: number;
-    lg: number;
-    xl: number;
-    "2xl": number;
-    "3xl": number;
-    "4xl": number;
-}
+  xxs: number;
+  xs: number;
+  small: number;
+  base: number;
+  lg: number;
+  xl: number;
+  "2xl": number;
+  "3xl": number;
+  "4xl": number;
+};
 
 export type fontWightDT = {
-    "thin": "400";
-    "medium": "500";
-    "semiBold": "600";
-    "bold": "700";
-    "extraBold": "900";
-}
+  thin: "400";
+  medium: "500";
+  semiBold: "600";
+  bold: "700";
+  extraBold: "900";
+};
 
 export type footerQuickLinksDT = {
-    name: string;
-    path: string;
-}
+  name: string;
+  path: string;
+};
